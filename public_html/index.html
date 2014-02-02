@@ -1,0 +1,90 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bézier</title>
+        <link rel="shortcut icon" href="./images/favicon.png" />
+        <link rel="icon" type="image/jpg" href="./images/favicon.png" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-3" id="menu">
+
+                    <h2>Paramètres de la courbe</h2>
+
+                    <p><em>Cliquez sur la grille pour ajouter des points de contrôle et survolez les titres pour des info complémentaires.</em></p>
+
+                    <div id="params-curve">
+                        <span class="radio">
+                            <strong id="brutforce" class="selected-mode drawMethode" title="Calcule un nombre de points reliés par des lignes depuis l'équation  ">
+                                Brut force
+                            </strong><br>
+                            <label>Nb Points : <input type="range" name="bruteforce-bar" class="bruteforce-bar" min="0" max="100" step="3" value="100"></label>
+                        </span>
+                        <span class="radio">
+                            <strong id="casteljou" class="drawMethode" title='Subdivise la courbe en sous courbes et les affiche, plus la subivision est grande plus le tracé est précis'>
+                                de Casteljau
+                            </strong><br>
+                            <label>Subdivision : <input type="range" name="casteljou-bar" class="casteljou-bar" min="2" max="6" step="1" value="2"></label>
+                        </span>
+
+                        <button type="button" class="mode btn btn-primary" id="remove-button">Effacer</button>
+                        <button type="button" class="mode btn btn-primary" id="anime-button">Animer</button>
+
+                    </div>
+
+                    <div id="formule-latex" title="aucun points">
+                        $${ { P }_{ 0...0}(t)=ND}$$
+                    </div>
+                    <div id="longueur">
+                        <strong title='Soient Lp la longeur du periphérique, Lc la longeur entre le premier et le dernier point de controle. Alors on aproxime longeur de la courbe en la subdivisant n fois jusque lp-lc < epsilon/2^n ainsi la sous courbe est de longeur environ (lp+lc)/2. On aditionne toute les longeurs des sous coubes. Epsilon à été choisi à 40.'>Longueur</strong><br>
+                        <span></span>
+                    </div>
+
+                    <div id="rail">
+                        <strong  title="Le rail est dessiné à partir de l'équation. On donne un nombre de points (ici  50) et une distance à la courbe. Chaque point calculé est translaté d'un vecteur normal à la courbe de norme la distance voulue. Le vecteur normal est en fait normal au segment de courbe entre deux points. Chaque point a donc deux images, une translatée perpendiculairement au segment précédent et l'autre au segment suivant.">Rail</strong><br>
+                        <label>Dist. : <input type="range" name="rail-bar" class="rail-bar" min="10" max="40" step="1" value="20"></label>
+                        <button class="btn btn-primary" id="display-rail">Activer</button>
+                    </div>
+
+                    <ul id="createdby">
+                        <li><a href="http://twitter.com/romainbouye" target="_blank" title="Romain Bouyé"><img src="./images/romainbouye.png"></a></li>
+                        <li><a href="http://twitter.com/tibeoh" target="_blank" title="Thibault Itart-Longueville"><img src="./images/tibeoh.png"></a></li>
+                        <li><a href="http://twitter.com/wasseing" target="_blank" title="Paul Wasson"><img src="./images/paulwasson.png"></a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md" id="content">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="height: 676px; width: 712px;"></svg>
+                </div>
+                <p class="col-md" id="test">
+                    
+                </p>
+            </div>
+
+        </div>
+       
+    <script type="text/javascript" src="libs/mathjax/MathJax.js"></script>
+    <script type="text/javascript" src="libs/mathjax/config/TeX-AMS-MML_HTMLorMML.js"></script>
+    <script type="text/javascript" src="libs/jquery-2.0.3.js"></script>
+    <script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/utilis.js"></script>
+    <script type="text/javascript" src="js/Line.js"></script>
+    <script type="text/javascript" src="js/Point.js"></script>
+    <script type="text/javascript" src="js/Curve.js"></script>
+    <script type="text/javascript" src="js/listeners.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>

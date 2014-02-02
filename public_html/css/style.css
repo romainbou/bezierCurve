@@ -1,0 +1,105 @@
+.container {
+	width: 100%;
+}
+
+
+#menu {
+	width: 400px;
+	height: 850px;
+	margin-right: 10px;
+	padding: 15px;
+	background-color: orange;
+	text-align: center;
+}
+
+#menu label {
+	line-height: 40px;
+}
+
+#menu input[type=range] {
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+#content {
+	background: url(../images/background-grill.png) repeat;
+}
+
+h2 {
+	text-align: center;
+}
+
+strong {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+strong.selected-mode {
+	font-weight: bolder;
+}
+
+#params-curve {
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+	margin-top: 15px;
+	background-color: white;
+}
+
+#formule-latex {
+	width: 100%;
+	height: 100px;
+	padding: 10px 0;
+	text-align: center;
+	margin-top: 15px;
+	background-color: white;
+}
+
+#longueur {
+	width: 100%;
+	height: 70px; 
+	padding: 10px 0;
+	text-align: center;
+	margin-top: 15px;
+	background-color: white;
+} 
+
+#longueur span {
+	font-weight: bolder;
+}
+
+#rail {
+	width: 100%;
+	height: 80px; 
+	padding: 10px 0;
+	text-align: center;
+	margin-top: 15px;
+	background-color: white;
+}
+
+#createdby {
+	position: absolute;
+	bottom: 0px;
+}
+
+#createdby li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#createdby li img {
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+	border: 3px solid white;
+}
+
+#createdby li img:hover {
+	opacity: 0.8;
+}
+.drawMethode:hover{
+    cursor: pointer;
+}
